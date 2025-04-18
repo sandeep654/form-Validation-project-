@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Details Form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bank Details Form</h1>
+        <p>Please fill your bank details such as Bank Name, Account Number, <br> Bank Holder Name, and Mobile Number .</p>
+
+        <input type="text" placeholder="Bank Name" class="gap" id="bankName"><br>
+        <span class="error" id="bankNameError"></span><br>
+
+        <input type="number" placeholder="Account Number" class="gap" id="accountNumber"><br>
+        <span class="error" id="accountNumberError"></span><br>
+
+        <input type="text" placeholder="Bank Holder Name" class="gap" id="bankHolderName"><br>
+        <span class="error" id="bankHolderNameError"></span><br>
+
+        <input type="number" placeholder="Mobile Number" class="gap" id="mobileNumber"><br>
+        <span class="error" id="mobileNumberError"></span><br>
+
+        <input type="button" value="Submit" id="validation" class="submit">
+    </div>
+
+    <div>
+        <h3 id="confirmationPage"></h3>
+        <input type="button" value="confirm" class="confirm" id="confirmDetail" style="display: none;">
+        <input type="button" value="Edit" class="edit" id="editDetails" style="display: none;">
+    </div>
+
+
+
+    </div>
+
+
+    <script src="script.js"></script> 
+</body>
+
+</html>
