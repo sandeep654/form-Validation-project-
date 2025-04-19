@@ -1,16 +1,19 @@
+let bankName = document.getElementById('bankName');
+let accountNumber = document.getElementById('accountNumber');
+let bankHolderName = document.getElementById('bankHolderName');
+let mobileNumber = document.getElementById('mobileNumber');
+
+
+// some validation added and by using the Events 
+
 let Validation = document.getElementById('validation');
-
         Validation.addEventListener('click', function () {
-            let bankName = document.getElementById('bankName');
-            let accountNumber = document.getElementById('accountNumber');
-            let bankHolderName = document.getElementById('bankHolderName');
-            let mobileNumber = document.getElementById('mobileNumber');
-
+        
             let isValid = true;
 
             if (bankName.value.trim() === '') {
                 let bankNameError = document.getElementById('bankNameError');
-                bankNameError.innerText = 'Please Enter your bank name ';
+                bankNameError.innerText = 'Please Enter your bank Name ';
                 bankNameError.style.display = 'inline';
                 isValid = false;
             }
@@ -22,9 +25,9 @@ let Validation = document.getElementById('validation');
                 isValid = false;
             }
 
-            if (bankHolderName.value.trim() === '' || (bankHolderName.value.length < 3 || accountNumber.value.length > 20)) {
+            if (bankHolderName.value.trim() === '' || (bankHolderName.value.length < 3 || bankHolderName.value.length > 20)) {
                 let bankHolderNameError = document.getElementById('bankHolderNameError');
-                bankHolderNameError.innerText = "Bank Holder name more than 3 character and less that 20 characters";
+                bankHolderNameError.innerText = "Bank Holder name more than 3 character and less than 20 characters";
                 bankHolderNameError.style.display = 'inline';
                 isValid = false;
             }
@@ -39,11 +42,11 @@ let Validation = document.getElementById('validation');
             if (isValid == true) {
 
                 let message = `
-    Confirm details 
-    Bank Name: ${bankName.value},
-    Account Number: ${accountNumber.value},
-    User Name: ${bankHolderName.value},
-    Mobile Number: ${mobileNumber.value} `;
+                Confirm the bank details <br>
+                Bank Name: ${bankName.value} <br>
+                Account Number: ${accountNumber.value} <br>
+                User Name: ${bankHolderName.value} <br>
+                Mobile Number: ${mobileNumber.value} `;
 
                 let confirmationPage = document.getElementById('confirmationPage');
                 confirmationPage.innerHTML = message;
@@ -57,12 +60,27 @@ let Validation = document.getElementById('validation');
                 mobileNumber.value = '';
             }
 
-
-
-
-
         })
 
+        // Event for error remove while typing on input
+    
+        bankName.addEventListener('input' , function (){
+          document.getElementById('bankNameError').style.display = 'none' ;
+        })
+
+        accountNumber.addEventListener('input' , function (){
+            document.getElementById('accountNumberError').style.display = 'none' ;
+          })
+        
+          bankHolderName.addEventListener('input' , function (){
+            document.getElementById('bankHolderNameError').style.display = 'none' ;
+          })
+
+          mobileNumber.addEventListener('input' , function (){
+            document.getElementById('mobileNumberError').style.display = 'none' ;
+          })             
+
+        // Event for Successfully submission.
         let confirmDetail = document.getElementById('confirmDetail');
         confirmDetail.addEventListener('click', function () {
             let message = `
@@ -75,6 +93,10 @@ let Validation = document.getElementById('validation');
 
         })
 
+
+
+
+        // Event for edit details..
         let editDetails = document.getElementById('editDetails');
         editDetails.addEventListener('click', function () {
             alert('Edit the details');

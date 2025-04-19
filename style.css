@@ -15,7 +15,7 @@ p {
 }
 
 .gap {
-    margin-left: 5px;
+    margin: 5px;
     height: 25px;
     width: 250px;
     padding: 5px;
